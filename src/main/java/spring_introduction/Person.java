@@ -1,5 +1,8 @@
 package spring_introduction;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Person 
 {
     private Pet pet;
@@ -11,7 +14,10 @@ public class Person
         this.pet = pet;
     }
 
-    public Person() {}
+    public Person()
+    {
+        System.out.println("Person bean is created");
+    }
     
     public void dialogPetAndPerson()
     {
