@@ -12,7 +12,9 @@
         </bean>
 
     <bean id = "musicClassicalBean"
-          class = "lessonMaterials.ClassicalMusic">
+          class = "lessonMaterials.ClassicalMusic"
+          factory-method="getClassicalMusic"
+    scope = "prototype">
     </bean>
 
     <bean id = "musicPopBean"

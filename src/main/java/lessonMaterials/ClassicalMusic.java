@@ -2,8 +2,16 @@ package lessonMaterials;
 
 public class ClassicalMusic implements Music
 {
-    public ClassicalMusic() {
+    private ClassicalMusic()
+    {
     }
+
+    public ClassicalMusic getClassicalMusic()
+    {
+        return new ClassicalMusic();
+    }
+
+    //public ClassicalMusic() {}
 
     @Override
     public String getSong()
