@@ -1,6 +1,5 @@
 package org.example;
 
-import lessonMaterials.Music;
 import lessonMaterials.MusicPlayer;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -12,6 +11,7 @@ public class SpringLesson
 
         MusicPlayer musicPlayer = context.getBean("musicPlayerBean", MusicPlayer.class);
         musicPlayer.playMusic();
+        System.out.println(musicPlayer.getName() + " " + musicPlayer.getVolume());
         context.close();
     }
 }
