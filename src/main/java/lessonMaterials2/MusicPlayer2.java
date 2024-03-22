@@ -1,21 +1,30 @@
-package lessonMaterials;
+package lessonMaterials2;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MusicPlayer
+@Component("player")
+public class MusicPlayer2
 {
-    private List<Music> musics = new ArrayList<>();
+    @Autowired
+    @Qualifier("rock")
+    private List<IMusic2> musics = new ArrayList<>();
     private String name;
     private int volume;
-    public MusicPlayer()
+
+    public MusicPlayer2()
     {
-        System.out.println("Отработал конструктор по умолчанию");
+        System.out.println("Отработал конструктор по умолчанию : MusicPlayer2");
     }
 
-    public MusicPlayer(Music music)
+    //@Autowired
+    public MusicPlayer2(IMusic2 music)
     {
-        System.out.println("Отработал конструктор с параметром");
+        System.out.println("Отработал конструктор с параметром : MusicPlayer2");
         musics.add(music);
     }
 
@@ -27,8 +36,13 @@ public class MusicPlayer
         }
     }
 
-    public void setMusics(List<Music> musicList) {
+    public void setMusics(List<IMusic2> musicList) {
         this.musics = musicList;
+    }
+
+    //@Autowired
+    public void setMusic(IMusic2 iMusic2) {
+        this.musics.add(iMusic2);
     }
 
     public List getMusics()
